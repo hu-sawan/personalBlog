@@ -1,0 +1,28 @@
+.post-card {
+    border: 1px solid var(--main-color);
+}
+
+.post-card .media {
+    display: flex;
+}
+
+.post-card .media .image {
+    width: 150px;
+    height: 150px;
+}
+
+.post-card .media .title {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+}
+
+.post-card .time {
+    background-color: var(--main-color);
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    padding: 1px 0;
+}

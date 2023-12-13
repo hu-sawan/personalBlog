@@ -1,0 +1,17 @@
+.blog-section {
+    /* TODO: remove this when finished */
+    min-height: calc(100vh - 111px);
+}
+
+.blog-section .posts-list {
+    margin: 15px 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .blog-section .posts-list {
+        grid-template-columns: 1fr;
+    }
+}
