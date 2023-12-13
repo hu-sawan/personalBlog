@@ -10,7 +10,7 @@ import Post from "./pages/post/Post";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <Nav />
             <Routes>
                 <Route path="/home" element={<Home />} />
