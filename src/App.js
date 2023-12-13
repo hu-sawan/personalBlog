@@ -18,7 +18,7 @@ function App() {
                 <Route path="/blog/" element={<Blog />} />
                 <Route path="/blog/:postId" element={<Post posts={posts} />} />
                 <Route path="/contact" element={<Contact />} />
-                {/* <Route path="*" element={<PageNotFound />} /> */}
+                <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Footer />
         </BrowserRouter>
