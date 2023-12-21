@@ -5,8 +5,9 @@ import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
-import { posts } from "./data/posts";
 import Post from "./pages/post/Post";
+import PostForm from "./pages/postForm/PostForm";
+import { posts } from "./data/data";
 
 function App() {
     return (

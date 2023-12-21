@@ -1,0 +1,26 @@
+.post-form-section {
+    /* TODO: remove this when finished */
+    min-height: calc(100vh - 111px);
+}
+
+.post-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.post-form-section form > input,
+.post-form-section form > textarea {
+    padding: 5px;
+    text-transform: capitalize;
+    resize: none;
+}
+
+.post-form-section form > input[type="submit"] {
+    width: 150px;
+    margin-left: auto;
+}
+
+.post-form-section form > textarea {
+    height: 200px;
+}

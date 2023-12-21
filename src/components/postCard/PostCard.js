@@ -8,7 +8,7 @@ function PostCard({ postInfo }) {
             <div className="post-card">
                 <div className="media">
                     <div className="image">
-                        {/* <img src="./img.png" alt="image data" /> */}
+                        <img src={postInfo.imageUrl} alt={`${postInfo.id}`} />
                     </div>
                     <div className="title">
                         <h3>{postInfo.title}</h3>
