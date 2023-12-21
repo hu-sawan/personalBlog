@@ -1,15 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA-_mN8JlzeTX-XCVdITdbbvD14Bl4rbcc",
-    authDomain: "personalblog-364f2.firebaseapp.com",
-    projectId: "personalblog-364f2",
-    storageBucket: "personalblog-364f2.appspot.com",
-    messagingSenderId: "741208860836",
-    appId: "1:741208860836:web:6c9b9a42a2540cc1d71e31",
+    apiKey: process.env.REACT_APP_FIREBSAE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBSAE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBSAE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBSAE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBSAE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBSAE_APP_ID,
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
+export const auth = getAuth(firebaseApp);
 
 export const storage = getStorage(firebaseApp);

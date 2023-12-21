@@ -6,8 +6,8 @@ import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import PageNotFound from "./components/pageNotFound/PageNotFound";
 import Post from "./pages/post/Post";
-import PostForm from "./pages/postForm/PostForm";
 import { posts } from "./data/data";
+import LoginPage from "./pages/loginPage/LoginPage";
 
 function App() {
     return (
@@ -17,6 +17,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/blog/" element={<Blog />} />
+                <Route path="/blog/addPost" element={<LoginPage />} />
                 <Route path="/blog/:postId" element={<Post posts={posts} />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<PageNotFound />} />

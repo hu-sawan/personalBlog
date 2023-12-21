@@ -6,7 +6,7 @@ import PageNotFound from "../../components/pageNotFound/PageNotFound";
 function Post({ posts }) {
     const { postId } = useParams();
 
-    const post = posts.find((p) => p.id == postId);
+    const post = posts.find((p) => p._id == postId);
 
     if (!post) return <PageNotFound />;
 
