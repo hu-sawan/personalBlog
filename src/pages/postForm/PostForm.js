@@ -1,5 +1,5 @@
 import "./postForm.css";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import { storage } from "../../data/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -20,6 +20,7 @@ function PostForm() {
         youtube: "",
         imageUrl: "",
     });
+    const isMounted = useRef(false);
 
     const sendImageToStorage = async (field) => {
         const file = field?.files[0];
@@ -40,27 +41,28 @@ function PostForm() {
 
         if (!downloadURL) throw new Error("Image was not uploaded!");
 
-        // .then(async (snapshot) => {
-        //     // important to get the downloadURL after the upload to store it in the db
-        //     console.log("entring getDownloadURL");
-        //     await getDownloadURL(snapshot.ref).then((downloadURL) => {
-        //         console.log("downloadURL", downloadURL);
-        //         setFormData((prevData) => {
-        //             return { ...prevData, imageUrl: downloadURL };
-        //         });
-        //     });
-        // })
-        // .catch((error) => {
-        //     console.log("error thrown");
-        //     throw error;
-        // });
         console.log("image sent successfully from image function");
-        setLoading(false);
+
         return downloadURL;
     };
 
-    const sendDataToApi = async (formData) => {
+    const handleImage = async (field) => {
         try {
+            const downloadURL = await sendImageToStorage(field);
+            setFormData((prevData) => {
+                return {
+                    ...prevData,
+                    imageUrl: downloadURL,
+                };
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const sendDataToApi = async () => {
+        try {
+            console.log(formData);
             const res = await fetch("http://localhost:3001/api/addPost", {
                 method: "POST",
                 headers: {
@@ -68,20 +70,20 @@ function PostForm() {
                 },
                 body: JSON.stringify(formData),
             });
-            if (res.ok) window.alert("post sent successfully");
+            if (res.ok) console.log("post sent successfully");
+            setLoading(false);
         } catch (e) {
             console.log(e);
         }
     };
 
-    const handleChange = (e) => {
-        setFormData((prevData) => {
-            return {
-                ...prevData,
-                [e.target.name]: e.target.value,
-            };
-        });
-    };
+    useEffect(() => {
+        if (isMounted.current) {
+            sendDataToApi();
+        } else {
+            isMounted.current = true;
+        }
+    }, [formData.imageUrl]);
 
     // after submitting the form add image to cloud storage to get the link and send the final data to
     // the backend
@@ -93,21 +95,8 @@ function PostForm() {
          * I can target the index directly but this appraoch will allow changing
          * the order of the file input in the form
          * */
-        let imageUrl;
         for (const child of e.target)
-            if (child.type === "file")
-                imageUrl = await sendImageToStorage(child);
-        // Asynchronous problems try to solve
-        console.log(imageUrl);
-
-        setFormData((prevData) => {
-            console.log("setting image url");
-            return { ...prevData, imageUrl: imageUrl };
-        });
-
-        console.log("image sent successfully", formData);
-
-        await sendDataToApi(formData);
+            if (child.type === "file") await handleImage(child);
 
         // FIX: temporarly
         // window.location.reload();
@@ -126,6 +115,15 @@ function PostForm() {
             youtube: "",
             imageUrl: "",
         }); */
+    };
+
+    const handleChange = (e) => {
+        setFormData((prevData) => {
+            return {
+                ...prevData,
+                [e.target.name]: e.target.value,
+            };
+        });
     };
 
     return (

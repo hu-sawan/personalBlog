@@ -13,7 +13,7 @@ function Blog() {
                 ) : (
                     <div className="posts-list">
                         {posts.map((post) => (
-                            <PostCard postInfo={post} />
+                            <PostCard key={post._id} postInfo={post} />
                         ))}
                     </div>
                 )}

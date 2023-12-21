@@ -14,3 +14,33 @@
     pointer-events: none;
     transition: opacity 0.3s ease-in-out;
 }
+
+.load-page.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.load-page .loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.load-page .loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
