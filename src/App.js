@@ -17,14 +17,16 @@ function App() {
      * */
 
     /*
-     * The main purpose of this website is to learn the following:
-     * - How to use React and get known to it
-     * - I had built a backend server using node and this helped me alot to learn how to
-     *   handle data betweeen front and backend using apis
-     * - I learnt how to use firebase
-     * - In addition to that I learnt how to use mongoDB
-     * - And also refreshed my memory on js and learnt some best practices
-     **/
+     * The main purpose of this website is to learn while building it, what I learnt:
+     * - How to use react hooks
+     * - How to use react-router
+     * - How to deal with data properly and I learnt some backend technologies like node and express
+     * - How to properly send and receive data from the backend using api calls
+     * - I learnt how to use firebase and how to handle authentication
+     * - I learnt how to use cloud storage and how to upload files to it
+     * - I learnt how to use mongodb and how to connect it to the backend
+     * - I learnt some best practices in web development
+     * */
     return (
         <BrowserRouter basename="/personalBlog">
             <Nav />
