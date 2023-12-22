@@ -1,33 +1,61 @@
 import "./nav.css";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import myResume from "../../assets/MyResume.pdf";
 
 function Nav() {
     let [isOpen, setIsOpen] = useState(false);
+    let mobileMenuRef = useRef(null);
 
-    let handleClick = () => {
+    const handleClick = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleDocumentClick = (e) => {
+        // if the click is outside the nav, close the mobile menu
+        if (
+            mobileMenuRef.current &&
+            !mobileMenuRef.current.contains(e.target)
+        ) {
+            setIsOpen(false);
+        }
+    };
+
+    // listen for clicks on the document to close the mobile menu when clicked outside the nav
+    useEffect(() => {
+        document.addEventListener("click", handleDocumentClick);
+
+        return () => {
+            document.removeEventListener("click", handleDocumentClick);
+        };
+    }, []);
+
     return (
-        <nav className="nav">
+        <nav className="nav" ref={mobileMenuRef}>
             <div className="container">
                 <img src={logo} alt="User one" />
                 <ul className={isOpen ? "active" : null}>
                     <li>
-                        <NavLink to="/home" activeClassName="active">
+                        <NavLink
+                            to="/home"
+                            activeClassName="active"
+                            onClick={handleClick}
+                        >
                             Home
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/blog" activeClassName="active">
+                        <NavLink
+                            to="/blog"
+                            activeClassName="active"
+                            onClick={handleClick}
+                        >
                             Blog
                         </NavLink>
                     </li>
                     {/* <li>
-                        <NavLink to="/contact" activeClassName="active">
+                        <NavLink to="/contact" activeClassName="active" onClick={handleClick}>
                             Hire me
                         </NavLink>
                     </li> */}
