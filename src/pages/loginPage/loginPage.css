@@ -44,3 +44,22 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+.login-section .alert {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f44336;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.login-section .alert.show {
+    visibility: visible;
+    opacity: 1;
+}

@@ -26,11 +26,11 @@ function Nav() {
                             Blog
                         </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to="/contact" activeClassName="active">
                             Hire me
                         </NavLink>
-                    </li>
+                    </li> */}
                     <li>
                         <a href={myResume}>CV</a>
                     </li>

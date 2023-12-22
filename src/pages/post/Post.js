@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PageNotFound from "../../components/pageNotFound/PageNotFound";
 
+// TODO: style the post page
 function Post({ posts }) {
     const { postId } = useParams();
 

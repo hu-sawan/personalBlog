@@ -46,6 +46,12 @@ function LoginPage() {
         return unsubscribe;
     }, []);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setError("");
+        }, 4000);
+    }, [error]);
+
     if (currentUser) return <PostForm />;
 
     return (
@@ -53,7 +59,9 @@ function LoginPage() {
             <div className="form-card">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
-                    {error && <div className="alert">{error}</div>}
+                    <div className={`alert ${error ? "show" : null}`}>
+                        {error}
+                    </div>
                     <label htmlFor="email">Email</label>
                     <input
                         name="email"
