@@ -20,7 +20,7 @@ function PostForm() {
         _id: postid,
         title: "",
         content: "",
-        writer: "",
+        author: "",
         facebook: "",
         linkedin: "",
         youtube: "",
@@ -142,7 +142,7 @@ function PostForm() {
             _id: nanoid(),
             title: "",
             content: "",
-            writer: "",
+            author: "",
             facebook: "",
             linkedin: "",
             youtube: "",
@@ -175,9 +175,9 @@ function PostForm() {
                             onChange={handleChange}
                         />
                         <input
-                            value={formData.writer}
+                            value={formData.author}
                             type="text"
-                            name="writer"
+                            name="author"
                             placeholder="Enter your name"
                             onChange={handleChange}
                         />

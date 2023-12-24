@@ -15,7 +15,11 @@ function PostCard({ postInfo }) {
                         <img src={postInfo.imageUrl} alt={`${postInfo._id}`} />
                     </div>
                     <div className="title">
-                        <h3>{postInfo.title}</h3>
+                        <h3>
+                            {postInfo.title.length > 56
+                                ? postInfo.title.substring(0, 56) + "..."
+                                : postInfo.title}
+                        </h3>
                     </div>
                 </div>
                 <div className="time">{formattedDate}</div>

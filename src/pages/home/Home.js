@@ -27,16 +27,18 @@ function Home() {
                             <Social
                                 platform="email"
                                 link="mailto:husseinsawan2003@gmail.com"
+                                backgroundColor="#00000054"
                             />
                             <Social
                                 platform="linkedin"
                                 link="https://www.linkedin.com/in/husseinsawan/"
+                                backgroundColor="#00000054"
                             />
                             <Social
                                 platform="github"
                                 link="https://github.com/hu-sawan"
+                                backgroundColor="#00000054"
                             />
-                            <Social platform="youtube" link="" />
                         </div>
                     </div>
                     <div className="img">

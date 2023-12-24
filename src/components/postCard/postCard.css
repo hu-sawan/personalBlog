@@ -4,6 +4,7 @@
 
 .post-card .media {
     display: flex;
+    gap: 10px;
 }
 
 .post-card .media .image {
@@ -12,14 +13,13 @@
 }
 
 .post-card .media .image img {
-    width: 100%;
+    width: 150px;
     height: 100%;
     object-fit: cover;
 }
 
 .post-card .media .title {
     display: flex;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
     color: var(--main-color);
@@ -31,4 +31,17 @@
     color: white;
     font-weight: 500;
     padding: 1px 0;
+}
+
+@media (max-width: 375px) {
+    .post-card .media .image {
+        width: 100%;
+    }
+    .post-card .media .image img {
+        width: 100%;
+    }
+    .post-card .media {
+        gap: 0;
+        flex-direction: column;
+    }
 }
