@@ -4,6 +4,7 @@ import { posts } from "../../data/data";
 import PostCard from "../../components/postCard/PostCard";
 
 function Blog() {
+    console.log(posts);
     return (
         <section className="blog-section">
             <div className="container">

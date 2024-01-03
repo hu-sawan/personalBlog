@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { nanoid } from "nanoid";
 import { storage } from "../../data/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import MDEditor from "../../components/mdEditor/MDEditor";
 import LoadPage from "../../components/loadPage/LoadPage";
 
 // will be used as the id for the post
@@ -79,7 +80,6 @@ function PostForm() {
 
     const sendDataToApi = async () => {
         try {
-            console.log(formData);
             const res = await fetch("http://localhost:3001/api/addPost", {
                 method: "POST",
                 headers: {
@@ -202,10 +202,20 @@ function PostForm() {
                             placeholder="Enter youtube url"
                             onChange={handleChange}
                         />
-                        <textarea
+                        {/* <textarea
                             name="content"
                             placeholder="enter post content"
                             onChange={handleChange}
+                            value={formData.content}
+                        /> */}
+                        <MDEditor
+                            id="content-md"
+                            onChange={(value) =>
+                                setFormData((prevData) => ({
+                                    ...prevData,
+                                    content: value,
+                                }))
+                            }
                             value={formData.content}
                         />
                         <input type="file" required={true} />

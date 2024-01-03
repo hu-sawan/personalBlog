@@ -3,8 +3,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import PageNotFound from "../../components/pageNotFound/PageNotFound";
 import Social from "../../components/social/Social";
+import ReactMarkdown from "react-markdown";
 
-// TODO: style the post page
 function Post({ posts }) {
     const { postId } = useParams();
 
@@ -65,7 +65,7 @@ function Post({ posts }) {
                     </div>
                     <div className="post-content">
                         <h1 className="post-title">{post.title}</h1>
-                        <p>{post.content}</p>
+                        <ReactMarkdown>{post.content}</ReactMarkdown>
                         <div className="post-info">
                             <span className="post-author">{post.writer}</span>
                             <span className="post-date">

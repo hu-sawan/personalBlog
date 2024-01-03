@@ -11,17 +11,21 @@ function Home() {
                     <div className="info">
                         <h1>Hello my name is Hussein Sawan</h1>
                         <p>
-                            I'm a dedicated computer science student with a
-                            broad skill set and a passion for software
-                            engineering. My academic journey has given me a
-                            solid foundation in computer science, and I've honed
-                            my technical skills in both front-end development,
-                            utilizing <strong>HTML</strong>,{" "}
-                            <strong>CSS</strong>, and <strong>React.js</strong>,
-                            as well as back-end development with{" "}
-                            <strong>Node.js</strong> and{" "}
-                            <strong>Express.js</strong>. Additionally, I have a
-                            strong command of <strong>C++</strong>.
+                            I am a dedicated second-year computer science
+                            student with a strong emphasis on{" "}
+                            <strong>C++</strong> programming. My academic
+                            journey has provided me with a robust foundation in
+                            computer science, and I have honed my technical
+                            skills in front-end development using{" "}
+                            <strong>HTML</strong>, <strong>CSS</strong>, and{" "}
+                            <strong>React.js</strong>, as well as back-end
+                            development with <strong>Node.js</strong> and{" "}
+                            <strong>Express.js</strong>. In addition to my
+                            proficiency in <strong>C++</strong>, I have also
+                            acquired expertise in utilizing{" "}
+                            <strong>Firebase</strong> for backend development
+                            and <strong>TypeScript</strong> and{" "}
+                            <strong>Python</strong> for various projects.
                         </p>
                         <div className="social-links">
                             <Social

@@ -8,10 +8,8 @@
     gap: 15px;
 }
 
-.post-form-section form > input,
-.post-form-section form > textarea {
+.post-form-section form > input {
     padding: 5px;
-    text-transform: capitalize;
     resize: none;
 }
 
