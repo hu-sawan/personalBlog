@@ -1,5 +1,6 @@
 .post-form-section {
-    min-height: calc(100vh - 111px);
+    min-height: calc(100vh + 1111px);
+    margin-bottom: 20px;
 }
 
 .post-form-section form {

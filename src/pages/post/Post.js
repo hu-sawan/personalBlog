@@ -60,14 +60,14 @@ function Post({ posts }) {
                                     />
                                 )}
                             </div>
-                            <div className="post-author">{post.writer}</div>
+                            <div className="post-author">{post.author}</div>
                         </div>
                     </div>
                     <div className="post-content">
                         <h1 className="post-title">{post.title}</h1>
                         <ReactMarkdown>{post.content}</ReactMarkdown>
                         <div className="post-info">
-                            <span className="post-author">{post.writer}</span>
+                            <span className="post-author">{post.author}</span>
                             <span className="post-date">
                                 {new Date(post.time).toDateString()}
                             </span>

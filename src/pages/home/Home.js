@@ -3,9 +3,9 @@ import React from "react";
 import progModel from "../../assets/model.png";
 import Social from "../../components/social/Social";
 import Project from "../../components/project/Project";
-import test from "../../assets/logo.png";
 
 function Home() {
+    // TDOD: add projects and restyle the project section
     return (
         <section className="home-section">
             <div className="brief-intro">

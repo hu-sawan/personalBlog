@@ -21,6 +21,7 @@ function Contact() {
     const handleSubmit = (e) => {
         // TODO: handle submit logic
         e.preventDefault();
+        console.log(formData);
         setFormData({
             name: "",
             email: "",
