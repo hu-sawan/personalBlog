@@ -202,12 +202,6 @@ function PostForm() {
                             placeholder="Enter youtube url"
                             onChange={handleChange}
                         />
-                        {/* <textarea
-                            name="content"
-                            placeholder="enter post content"
-                            onChange={handleChange}
-                            value={formData.content}
-                        /> */}
                         <MDEditor
                             id="content-md"
                             onChange={(value) =>

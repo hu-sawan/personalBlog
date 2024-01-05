@@ -2,6 +2,8 @@ import "./home.css";
 import React from "react";
 import progModel from "../../assets/model.png";
 import Social from "../../components/social/Social";
+import Project from "../../components/project/Project";
+import test from "../../assets/logo.png";
 
 function Home() {
     return (
@@ -50,7 +52,10 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="container"></div>
+            <div className="container">
+                <h2 style={{ margin: "20px 0 10px 0" }}>Projects: </h2>
+                <div className="project-wrapper">{/* Add Projects */}</div>
+            </div>
         </section>
     );
 }

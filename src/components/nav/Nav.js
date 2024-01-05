@@ -54,11 +54,15 @@ function Nav() {
                             Blog
                         </NavLink>
                     </li>
-                    {/* <li>
-                        <NavLink to="/contact" activeClassName="active" onClick={handleClick}>
+                    <li>
+                        <NavLink
+                            to="/contact"
+                            activeClassName="active"
+                            onClick={handleClick}
+                        >
                             Hire me
                         </NavLink>
-                    </li> */}
+                    </li>
                     <li>
                         <a href={myResume}>CV</a>
                     </li>

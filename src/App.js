@@ -8,7 +8,7 @@ import LoadPage from "./components/loadPage/LoadPage";
 const Home = lazy(() => import("./pages/home/Home"));
 const Blog = lazy(() => import("./pages/blog/Blog"));
 const LoginPage = lazy(() => import("./pages/loginPage/LoginPage"));
-// const Contact = lazy(() => import("./pages/contact/Contact"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
 const Post = lazy(() => import("./pages/post/Post"));
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
                         path="/blog/:postId"
                         element={<Post posts={posts} />}
                     />
-                    {/* <Route path="/contact" element={<Contact />} /> */}
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </Suspense>
