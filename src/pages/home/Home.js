@@ -3,6 +3,7 @@ import React from "react";
 import progModel from "../../assets/model.png";
 import Social from "../../components/social/Social";
 import Project from "../../components/project/Project";
+import portfoioImg from "../../assets/portfolio-project/p-1.png";
 
 function Home() {
     // TDOD: add projects and restyle the project section
@@ -54,7 +55,7 @@ function Home() {
             </div>
             <div className="container">
                 <h2 style={{ margin: "20px 0 10px 0" }}>Projects: </h2>
-                <div className="project-wrapper">{/* Add Projects */}</div>
+                <div className="project-wrapper">{/* ADD PROJECTS */}</div>
             </div>
         </section>
     );
