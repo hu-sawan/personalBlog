@@ -27,7 +27,7 @@ function Project({ img, title, skills, description, githubRepo, link }) {
                         <a href={githubRepo}>
                             Code <FontAwesomeIcon icon={faGithub} />
                         </a>
-                        <a href={link}>
+                        <a href={link} disable={true}>
                             Live Demo{" "}
                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                         </a>

@@ -4,9 +4,46 @@ import progModel from "../../assets/model.png";
 import Social from "../../components/social/Social";
 import Project from "../../components/project/Project";
 import portfoioImg from "../../assets/portfolio-project/p-1.png";
+import pacmanImg from "../../assets/pacman-project/p-1.png";
+import personalBlogImg from "../../assets/personalBlog-project/p-1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+    faChevronLeft,
+    faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
+const projects = [
+    {
+        title: "Portfolio Website",
+        img: portfoioImg,
+        skills: ["HTML", "CSS", "JS"],
+        description:
+            "A portfolio website to showcase my projects and skills. The website is built using HTML, CSS, and JavaScript.",
+        githubRepo: "https://github.com/hu-sawan/personalPortfolio",
+        link: "https://hu-sawan.github.io/personalPortfolio/",
+    },
+    {
+        title: "Pacman web game",
+        img: pacmanImg,
+        skills: ["Canvas", "JS"],
+        description:
+            "A Pacman web game built using HTML Canvas and JavaScript.",
+        githubRepo: "https://github.com/hu-sawan/pacman",
+        link: "https://hu-sawan.github.io/pacman/",
+    },
+    {
+        title: "Personal Blog",
+        img: personalBlogImg,
+        skills: ["Reactjs", "Nodejs", "Expressjs", "MongoDB/Firebase"],
+        description:
+            "A personal blog website built using Reactjs, Nodejs, Expressjs, and MongoDB/Firebase.",
+        githubRepo: "https://github.com/hu-sawan/personalBlog",
+        link: "",
+    },
+];
 
 function Home() {
-    // TDOD: add projects and restyle the project section
     return (
         <section className="home-section">
             <div className="brief-intro">
@@ -55,7 +92,25 @@ function Home() {
             </div>
             <div className="container">
                 <h2 style={{ margin: "20px 0 10px 0" }}>Projects: </h2>
-                <div className="project-wrapper">{/* ADD PROJECTS */}</div>
+                <div className="project-wrapper">
+                    {projects.map((project) => {
+                        return <Project {...project} />;
+                    })}
+                    <div className="more-projects">
+                        <div>
+                            <span className="icon left">
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </span>
+                            And more projects on my{" "}
+                            <a href="https://github.com/hu-sawan">
+                                GitHub <FontAwesomeIcon icon={faGithub} />
+                            </a>
+                            <span className="icon right">
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );
