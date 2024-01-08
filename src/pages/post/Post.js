@@ -27,7 +27,7 @@ function Post({ posts }) {
                 <div className="post">
                     <div className="post-header">
                         <div className="post-image">
-                            <img src={post.imageUrl} alt={post.title} />
+                            <img src={post.imageUrl} alt={post._id} />
                         </div>
                         <div className="post-social">
                             <div className="social-links">

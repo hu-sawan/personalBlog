@@ -93,8 +93,8 @@ function Home() {
             <div className="container">
                 <h2 style={{ margin: "20px 0 10px 0" }}>Projects: </h2>
                 <div className="project-wrapper">
-                    {projects.map((project) => {
-                        return <Project {...project} />;
+                    {projects.map((project, index) => {
+                        return <Project right={index % 2} {...project} />;
                     })}
                     <div className="more-projects">
                         <div>

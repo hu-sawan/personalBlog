@@ -6,6 +6,10 @@
     display: flex;
 }
 
+.project-card.right {
+    flex-direction: row-reverse;
+}
+
 .project-card .image {
     border-radius: 5px;
     overflow: hidden;
@@ -31,6 +35,15 @@
 .project-details .info {
     flex-grow: 1;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-details .info .description {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-details .info h3 {
@@ -47,6 +60,7 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -60,4 +74,20 @@
     color: black;
     font-weight: bold;
     cursor: pointer;
+}
+
+.project-details .project-links a.disable {
+    opacity: 0.3;
+    user-select: none;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media (max-width: 767px) {
+    .project-card {
+        flex-direction: column !important;
+    }
+    .project-card > div {
+        width: 100% !important;
+    }
 }
